@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/csarigumba/aws_serverles_architecture_patterns/issues"
   },
-  "homepage": "https://github.com/csarigumba/aws_serverles_architecture_patterns#readme"
+  "homepage": "https://github.com/csarigumba/aws_serverles_architecture_patterns#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.42.0",
+    "@aws-sdk/util-dynamodb": "^3.42.0",
+    "serverless-iam-roles-per-function": "^3.2.0"
+  }
 }
