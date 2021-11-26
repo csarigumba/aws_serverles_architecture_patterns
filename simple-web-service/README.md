@@ -3,7 +3,7 @@
 The most simple pattern in AWS. It allows you to build a full serverless API. In the diagram, each API access its own datastore (DynamoDB). Depending on the business use-case, users can also choose to use only one datastore for simplicity.
 
 <p align="center">
-  <img width=100% src="diagram/diagram.png">
+  <img width=50% src="diagram/diagram.png">
 </p>
 
 - API Gateway - expose REST APIs
