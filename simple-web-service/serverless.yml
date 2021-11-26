@@ -29,6 +29,20 @@ functions:
         Action:
           - 'dynamodb:GetItem'
         Resource: !GetAtt PostsTable.Arn
+  createPost:
+    handler: api.createPost
+    name: create-post
+    memorySize: 128 # mb
+    timeout: 5 # seconds
+    events:
+      - http:
+          path: post
+          method: POST
+    iamRoleStatements:
+      - Effect: 'Allow'
+        Action:
+          - 'dynamodb:PutItem'
+        Resource: !GetAtt PostsTable.Arn
 
 resources:
   Resources:
