@@ -36,3 +36,23 @@ const getPost = async event => {
 
   return response;
 };
+
+const createPost = async event => {
+  const response = { statusCode: 200 };
+
+  try {
+    const body = JSON.parse(event.body);
+    const params = {
+      TableName: process.env.DYNAMODB_TABLE_NAME,
+      Item: marshall(body || {}),
+    };
+    const createResult = await db.send(new PutItemCommand(params));
+
+    response.body = JSON.stringify({
+      message: 'Successfully created post.',
+      createResult,
+    });
+  } catch (e) {}
+
+  return response;
+};
