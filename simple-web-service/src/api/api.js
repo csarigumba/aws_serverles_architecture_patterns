@@ -144,6 +144,9 @@ const getAllPosts = async () => {
   try {
     const { Items } = await db.send(new ScanCommand({ TableName: process.env.DYNAMODB_TABLE_NAME }));
 
+    // TODO: Add while loop to handle next item for the scan operation
+    // But for this usecase, since it is for r&d purposes, one scan operation will be enough
+
     response.body = JSON.stringify({
       message: 'Successfully retrieved all posts.',
       data: Items.map(item => unmarshall(item)),
