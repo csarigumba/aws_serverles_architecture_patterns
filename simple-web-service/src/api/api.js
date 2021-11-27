@@ -24,7 +24,15 @@ const getPost = async event => {
       data: Item ? unmarshall(Item) : {},
       rawData: Item,
     });
-  } catch (e) {}
+  } catch (e) {
+    console.error(e);
+    response.statusCode = 500;
+    response.body = JSON.stringify({
+      message: 'Failed to get post.',
+      errorMsg: e.message,
+      errorStack: e.stack,
+    });
+  }
 
   return response;
 };
