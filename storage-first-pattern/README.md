@@ -9,7 +9,7 @@ This pattern allows for a high volume of incoming traffic even if the backend se
 ## Architecture
 
 <p align="center">
-  <img width=50% src="diagram/diagram.png">
+  <img width=80% src="diagram/diagram.png">
 </p>
 
 - API Gateway - expose REST APIs
