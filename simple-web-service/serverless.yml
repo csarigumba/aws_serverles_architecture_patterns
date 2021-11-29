@@ -3,16 +3,26 @@ service: dynamodb-crud-api
 provider:
   name: aws
   runtime: nodejs14.x
-  stage: dev
+  stage: local # Update for other environment: dev, stg, prd
   region: ap-southeast-1
   environment:
     DYNAMODB_TABLE_NAME: ${self:custom.postsTableName}
+    ENV: ${self:provider.stage}
 
 custom:
   postsTableName: posts-table-${self:provider.stage}
+  dynamodb:
+    stages:
+      - local
+    start:
+      migrate: true
+  serverless-offline:
+    resourceRoutes: true # HTTP proxy
 
 plugins:
   - serverless-iam-roles-per-function
+  - serverless-dynamodb-local
+  - serverless-offline
 
 functions:
   getPost:

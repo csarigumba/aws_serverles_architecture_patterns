@@ -33,6 +33,26 @@ The application is consist of 5 basic APIs for demo purposes:
 
 The whole infrastructure is written using Serverless Framework. This is to allow seamless development in local and deployment to AWS environment.
 
+### Local Environment
+
+**Optional:** Install the following dependency for local testing.
+
+```sh
+$ npm i -g serverless serverless-dynamodb-local serverless-offline
+```
+
+Install DynamoDb local
+
+```sh
+$ serverless dynamodb install
+```
+
+Start local API
+
+```sh
+$ serverless offline start
+```
+
 ## Deployment
 
 - Note: The Github workflow will not work since the workflow file is located in the sub-directory.
@@ -41,11 +61,11 @@ The whole infrastructure is written using Serverless Framework. This is to allow
 For manual deployment, run the following command.
 
 ```sh
-serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
+$ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
 ```
 
 ## Removing
 
 ```sh
-serverless remove --aws-profile {PROFILE} -r {AWS_REGION} -v
+$ serverless remove --aws-profile {PROFILE} -r {AWS_REGION} -v
 ```
