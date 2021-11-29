@@ -19,7 +19,7 @@ The application is consist of 5 basic APIs for demo purposes:
   <img width=50% src="diagram/diagram.png">
 </p>
 
-- API Gateway - expose REST APIs
+- API Gateway - expose REST APIs / proxy to AWS Lambda
 - Lambda function - the business logic is stored here
 - DynamoDB - for datastore
 
