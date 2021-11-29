@@ -3,6 +3,16 @@
 The most simple pattern in AWS. It allows you to build a full serverless API. In the diagram, each API has its own Lambda handler and its own datastore (DynamoDB), it is a best practice that each Lambda has highly restrictive set of IAM permission in terms of what it can access to AWS.
 Depending on the business use-case, users can also choose to use only one datastore for simplicity.
 
+The application is consist of 5 basic APIs for demo purposes:
+
+| HTTP Method | Endpoint       | Description        |
+| ----------- | -------------- | ------------------ |
+| GET         | /post/{postId} | Retrieve a post    |
+| POST        | /post          | Create a post      |
+| PUT         | /post/{postId} | Update a post      |
+| DELETE      | /post/{postId} | Delete a post      |
+| GET         | /posts         | Retrieve all posts |
+
 ## Architecture
 
 <p align="center">
