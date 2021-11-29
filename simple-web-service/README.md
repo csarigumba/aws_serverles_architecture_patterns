@@ -47,5 +47,5 @@ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
 ## Removing
 
 ```sh
-serverless remove --aws-profile plato -r ap-southeast-1 -v
+serverless remove --aws-profile {PROFILE} -r {AWS_REGION} -v
 ```
