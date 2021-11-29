@@ -29,6 +29,10 @@ The application is consist of 5 basic APIs for demo purposes:
   - Compared to version 2, version 3 allow us to install what we need (by module and not the whole AWS SDK)
 - Github pipeline for CI/CD
 
+## Running
+
+The whole infrastructure is written using Serverless Framework. This is to allow seamless development in local and deployment to AWS environment.
+
 ## Deployment
 
 - Note: The Github workflow will not work since the workflow file is located in the sub-directory.
@@ -40,6 +44,8 @@ For manual deployment, run the following command.
 serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
 ```
 
-## Running
+## Removing
 
-The whole infrastructure is written using Serverless Framework. This is to allow seamless development in local and deployment to AWS environment.
+```sh
+serverless remove --aws-profile plato -r ap-southeast-1 -v
+```
