@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('../database/db');
 const { ScanCommand } = require('@aws-sdk/client-dynamodb');
 const { unmarshall } = require('@aws-sdk/util-dynamodb');
 

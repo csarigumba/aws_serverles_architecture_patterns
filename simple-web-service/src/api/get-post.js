@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('../database/db');
 const { GetItemCommand } = require('@aws-sdk/client-dynamodb');
 const { marshall, unmarshall } = require('@aws-sdk/util-dynamodb');
 

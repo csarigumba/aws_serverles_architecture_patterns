@@ -18,6 +18,8 @@ Depending on the business use-case, users can also choose to use only one datast
 - AWS SDK for JavaScript v3
   - Compared to version 2, version 3 allow us to install what we need (by module and not the whole AWS SDK)
 - Github pipeline for CI/CD
+  - Note: The Github workflow will not work since the workflow file is located in the sub-directory.
+  - TODO: Test the Github workflow by moving the workflow file in the root directory
 
 ## Running
 
