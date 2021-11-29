@@ -1,5 +1,5 @@
 const db = require('./db');
-const { GetItemCommand, DeleteItemCommand, ScanCommand, UpdateItemCommand } = require('@aws-sdk/client-dynamodb');
+const { DeleteItemCommand, ScanCommand } = require('@aws-sdk/client-dynamodb');
 const { marshall, unmarshall } = require('@aws-sdk/util-dynamodb');
 
 const deletePost = async event => {
