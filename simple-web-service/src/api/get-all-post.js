@@ -14,7 +14,6 @@ const getAllPosts = async () => {
     response.body = JSON.stringify({
       message: 'Successfully retrieved all posts.',
       data: Items.map(item => unmarshall(item)),
-      Items,
     });
   } catch (e) {
     console.error(e);
