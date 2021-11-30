@@ -20,7 +20,7 @@ Resources:
         'Fn::Transform':
           Name: 'AWS::Include'
           Parameters:
-            Location: 'api.yaml'
+            Location: 'api.yml'
 
   MyLambdaFunction:
     Type: AWS::Serverless::Function
