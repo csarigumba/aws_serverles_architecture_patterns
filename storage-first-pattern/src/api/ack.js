@@ -1,6 +1,6 @@
-const acknowledge = async event => {
+const handler = async event => {
   // Add busines logic here
-
+  console.log(`Received event: ${JSON.stringify(event)}`);
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -11,5 +11,5 @@ const acknowledge = async event => {
 };
 
 module.exports = {
-  acknowledge,
+  handler,
 };
