@@ -11,3 +11,4 @@ Created this repository as personal reference and to deepen understanding.
 
 - Pattern 01 : [Simple Web Service Pattern](https://github.com/csarigumba/aws_serverles_architecture_patterns/tree/main/simple-web-service)
 - Pattern 02 : [Storage First Pattern](https://github.com/csarigumba/aws_serverles_architecture_patterns/tree/main/storage-first-pattern)
+- Pattern 03 : [The Router Pattern](https://github.com/csarigumba/aws_serverles_architecture_patterns/tree/main/router-pattern)
