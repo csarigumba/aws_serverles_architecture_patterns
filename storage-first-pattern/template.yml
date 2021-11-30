@@ -50,6 +50,35 @@ Resources:
           Properties:
             Queue: !GetAtt MySqsQueue.Arn
             BatchSize: 10
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - 'dynamodb:DeleteItem'
+                - 'dynamodb:GetItem'
+                - 'dynamodb:PutItem'
+                - 'dynamodb:UpdateItem'
+              Resource:
+                'Fn::Join':
+                  - ''
+                  - - 'arn:aws:dynamodb:'
+                    - Ref: 'AWS::Region'
+                    - ':'
+                    - Ref: 'AWS::AccountId'
+                    - ':table/MyDynamoDbTable'
+
+  # DynamoDB
+  MyTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: MyDynamoDbTable
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
 
   # API Role for API Gateway
   # Allow to send message to SQS and publish logs to Cloudwatch
