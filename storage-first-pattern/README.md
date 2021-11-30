@@ -38,3 +38,38 @@ sam deploy --guided --profile {AWS_PROFILE} --region {AWS_REGION}
 
 This will create a file called `samconfig.toml` containing the configuration of this stack.
 Once it is created, you can then run the `sam deploy` command to use the default configuration.
+
+## Testing
+
+Run the following command to send an HTTP `POST` request to the HTTP APIs endpoint. Note, you must edit the {MyHttpAPI} placeholder with the URL of the deployed HTTP APIs endpoint. This is provided in the stack outputs.
+
+```bash
+curl --location --request POST '{MyHttpAPI}/submit'
+> --header 'Content-Type: application/json' \
+> --data-raw '{ "isMessageReceived": "Yes" }'
+```
+
+Then open MyLambdaFunction logs on Cloudwatch to notice a log that resembles to the message bellow, which mean the message has gone through API Gateway, was pushed to SQS and then consumed by the Lambda function:
+
+```
+{
+    "Records": [
+        {
+            "messageId": "93ba6855-2690-4d17-80ef-585f47d151fc",
+            "receiptHandle": "AQEBi1vefmNSdKdMtCwr33eV/GekQLpsZ6IfFJLQ5DHAyfbDGvY1VvoqMOEF34YIm42XjZO0GDDYPNQ66xA+ax8hdHUchIrMx3PJfkQaQAxQfkGw0SbQx3wchw8gtIqJ+RDz4QFyWjKoeXwJTv",
+            "body": "{ \"isMessageReceived\": \"Yes\" }",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "SentTimestamp": "1617397503139",
+                "SenderId": "AROASDEO2NWPIG5WZAP3F:1617397503105006814",
+                "ApproximateFirstReceiveTimestamp": "1617397503146"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "b62a98ce622eeb04548425913fb29789",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:144180931998:MySqsQueue",
+            "awsRegion": "us-east-1"
+        }
+    ]
+}
+```
