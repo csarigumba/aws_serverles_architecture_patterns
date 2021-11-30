@@ -1,5 +1,10 @@
 # Storage First Pattern
 
+Use-case:
+
+- Supports high volume of traffic regardless if the backend services can support or not.
+- Converting synchronous to asynchronous requests.
+
 This pattern saves the data permanently before the business logic is applied. The advantage of this pattern is that it improves the resilience of the application. By persisting the data before processing, you can continue to use the original data in the event of an error.
 
 The queue acts as a buffer to alleviate traffic spikes and ensure your workload can sustain the arriving load by buffering all the requests durably.
