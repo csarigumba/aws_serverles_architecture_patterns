@@ -19,6 +19,7 @@ This pattern allows for a high volume of incoming traffic even if the backend se
 3. If the message is successfully received, the SQS queue will acknowledged with "ack" successful response.
 4. The client receives the response
 5. The Lambda function subscribes to an SQS queue continuously polling (using long polling) the queue for available message. If a message is available, it will then proceed on processing the request.
+6. We are allowing the Lambda function to retry the request twice in an event of an error. If the maximum retry is meet, the request will be rerouted to a Dead Letter Queue for investigation.
 
 ### AWS Resources
 
