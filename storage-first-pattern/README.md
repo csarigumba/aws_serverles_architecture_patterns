@@ -73,3 +73,19 @@ Then open MyLambdaFunction logs on Cloudwatch to notice a log that resembles to 
     ]
 }
 ```
+
+## Cleanup
+
+Deletion
+
+```sh
+$ sam delete --stack-name {STACK_NAME} --profile {AWS_PROFILE} --region {AWS_REGION}
+```
+
+Verification
+
+```sh
+aws cloudformation list-stacks --query "StackSummaries[?contains(StackName,'sam-app')].StackStatus" \
+--profile {AWS_PROFILE} \
+--region {AWS_REGION}
+```
