@@ -26,3 +26,15 @@ This pattern allows for a high volume of incoming traffic even if the backend se
 - API Gateway - expose REST APIs
 - SQS - receive the request and just return acknowledgedment that the request is submitted.
 - Lambda function - the business logic is stored here
+
+## Deployment
+
+The full stack is written using AWS Serverless Application Model (AWS SAM).
+Deploy by running the command:
+
+```sh
+sam deploy --guided --profile {AWS_PROFILE} --region {AWS_REGION}
+```
+
+This will create a file called `samconfig.toml` containing the configuration of this stack.
+Once it is created, you can then run the `sam deploy` command to use the default configuration.
