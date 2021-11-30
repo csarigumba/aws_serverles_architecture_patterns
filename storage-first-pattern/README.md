@@ -33,7 +33,7 @@ The full stack is written using AWS Serverless Application Model (AWS SAM).
 Deploy by running the command:
 
 ```sh
-sam deploy --guided --profile {AWS_PROFILE} --region {AWS_REGION}
+$ sam deploy --guided --profile {AWS_PROFILE} --region {AWS_REGION}
 ```
 
 This will create a file called `samconfig.toml` containing the configuration of this stack.
@@ -44,7 +44,7 @@ Once it is created, you can then run the `sam deploy` command to use the default
 Run the following command to send an HTTP `POST` request to the HTTP APIs endpoint. Note, you must edit the {MyHttpAPI} placeholder with the URL of the deployed HTTP APIs endpoint. This is provided in the stack outputs.
 
 ```bash
-curl --location --request POST '{MyHttpAPI}/submit'
+$ curl --location --request POST '{MyHttpAPI}/submit'
 > --header 'Content-Type: application/json' \
 > --data-raw '{ "isMessageReceived": "Yes" }'
 ```
@@ -85,7 +85,7 @@ $ sam delete --stack-name {STACK_NAME} --profile {AWS_PROFILE} --region {AWS_REG
 Verification
 
 ```sh
-aws cloudformation list-stacks --query "StackSummaries[?contains(StackName,'sam-app')].StackStatus" \
+$ aws cloudformation list-stacks --query "StackSummaries[?contains(StackName,'sam-app')].StackStatus" \
 --profile {AWS_PROFILE} \
 --region {AWS_REGION}
 ```
