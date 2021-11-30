@@ -15,7 +15,7 @@ Considerations:
 ## Architecture
 
 <p align="center">
-  <img width=50% src="diagram/diagram.png">
+  <img width=80% src="diagram/diagram.png">
 </p>
 
 ## Deployment
