@@ -1,8 +1,16 @@
 # The Router Pattern
 
-Use-case:
+Use-case: **Asynchronous** decision making
 
-- **Asynchronous** decision making
+Benefits:
+
+- Extremely cost efficient and simple to implement
+- Decoupling
+
+Considerations:
+
+- Limited error handling because of the asynchrounous behavior and parallelism
+- For complex decision making with error handling and parallelism, use **Amazon state machines**
 
 ## Architecture
 
