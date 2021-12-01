@@ -7,3 +7,27 @@ provider:
   region: ap-southeast-1
   environment:
     ENV: ${self:provider.stage}
+
+plugins:
+  - serverless-iam-roles-per-function
+  - serverless-offline
+
+functions:
+  router:
+    handler: ./src/api/router.handler
+    name: router
+    memorySize: 128 # mb
+    timeout: 5 # seconds
+    events:
+      - http:
+          path: /{mode}
+          method: GET
+  serviceA:
+    handler: /src/services/service-a.handler
+    name: service-a
+    memorySize: 128 # mb
+    timeout: 5 # seconds
+    events:
+      - http:
+          path: /{mode}
+          method: GET
