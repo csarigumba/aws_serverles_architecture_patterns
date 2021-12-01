@@ -1,0 +1,9 @@
+service: router-pattern
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: local # Update for other environment: dev, stg, prd
+  region: ap-southeast-1
+  environment:
+    ENV: ${self:provider.stage}
