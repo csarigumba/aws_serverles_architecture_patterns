@@ -35,6 +35,10 @@ functions:
           - sqs:SendMessage
         Resource:
           - Fn::Join: [':', ['arn:aws:sqs', Ref: 'AWS::Region', Ref: 'AWS::AccountId', '${self:custom.sqs-router}']]
+      - Effect: Allow
+        Action:
+          - lambda:InvokeFunction
+        Resource: '*'
     deadLetter:
       sqs: ${self:custom.sqs-router}
   serviceA:
