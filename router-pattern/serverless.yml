@@ -42,7 +42,7 @@ functions:
     deadLetter:
       sqs: ${self:custom.sqs-router}
   serviceA:
-    handler: /src/services/service-a.handler
+    handler: ./src/services/service-a.handler
     name: service-a
     memorySize: 128 # mb
     timeout: 5 # seconds
@@ -55,7 +55,7 @@ functions:
     deadLetter:
       sqs: ${self:custom.sqs-service-a}
   serviceB:
-    handler: /src/services/service-b.handler
+    handler: ./src/services/service-b.handler
     name: service-b
     memorySize: 128 # mb
     timeout: 5 # seconds
@@ -68,7 +68,7 @@ functions:
     deadLetter:
       sqs: ${self:custom.sqs-service-b}
   serviceC:
-    handler: /src/services/service-c.handler
+    handler: ./src/services/service-c.handler
     name: service-c
     memorySize: 128 # mb
     timeout: 5 # seconds
