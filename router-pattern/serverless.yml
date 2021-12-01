@@ -27,8 +27,13 @@ functions:
     name: service-a
     memorySize: 128 # mb
     timeout: 5 # seconds
-  serviceA:
+  serviceB:
     handler: /src/services/service-b.handler
     name: service-b
+    memorySize: 128 # mb
+    timeout: 5 # seconds
+  serviceC:
+    handler: /src/services/service-b.handler
+    name: service-c
     memorySize: 128 # mb
     timeout: 5 # seconds
