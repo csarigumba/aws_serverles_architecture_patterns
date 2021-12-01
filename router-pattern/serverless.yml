@@ -7,9 +7,19 @@ provider:
   region: ap-southeast-1
   environment:
     ENV: ${self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - sqs:SendMessage
+      Resource:
+        - Fn::Join: [':', ['arn:aws:sqs', Ref: 'AWS::Region', Ref: 'AWS::AccountId', '${self:custom.sqs}']]
+
+custom:
+  sqs: router-dlq
 
 plugins:
   - serverless-iam-roles-per-function
+  - serverless-plugin-lambda-dead-letter
   - serverless-offline
 
 functions:
@@ -22,6 +32,8 @@ functions:
       - http:
           path: /{mode}
           method: GET
+    deadLetter:
+      sqs: ${self:custom.sqs}
   serviceA:
     handler: /src/services/service-a.handler
     name: service-a
@@ -33,7 +45,7 @@ functions:
     memorySize: 128 # mb
     timeout: 5 # seconds
   serviceC:
-    handler: /src/services/service-b.handler
+    handler: /src/services/service-c.handler
     name: service-c
     memorySize: 128 # mb
     timeout: 5 # seconds
