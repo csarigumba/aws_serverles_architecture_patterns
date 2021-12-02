@@ -20,8 +20,14 @@ Considerations:
 
 ## Deployment
 
-TODO
+Run the following command.
+
+```sh
+$ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
+```
 
 ## Cleanup
 
-TODO
+```sh
+$ serverless remove --aws-profile {PROFILE} -r {AWS_REGION} -v
+```
