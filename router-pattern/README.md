@@ -32,7 +32,7 @@ Another example, the diagram below is similar with the original architecture. Ho
   <img width=80% src="diagram/diagram-s3.drawio.png">
 </p>
 
-If a file is dropped into the S3 bucket, the lambda router will simply identify the extension of the file (if it is `.csv`, `.json`, or `.pdf`) and decide on which service to forward the request. The challenge here is each file could have a unique logic on processing the data.
+If a file is dropped into the S3 bucket, the lambda router will simply identify the extension of the file (if it is `.csv`, `.json`, or `.pdf`) and decide on which service to forward the request. The challenge here is each file could have a different logic on processing the data.
 
 By using the Router pattern approach, we can decouple each unique logics on each Lambda and focus on building the logic separately (separation of concerns).
 
