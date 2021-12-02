@@ -28,6 +28,10 @@ In this example, the lambda function is simply interacting with the DynamoDb, a 
 
 Another example, the diagram below is similar with the original architecture. However, the lambda router function is triggered by an S3 PUT event.
 
+<p align="center">
+  <img width=80% src="diagram/diagram-s3.drawio.png">
+</p>
+
 ## Deployment
 
 Run the following command.
