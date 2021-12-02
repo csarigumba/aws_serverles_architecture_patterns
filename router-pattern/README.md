@@ -44,6 +44,29 @@ Run the following command.
 $ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
 ```
 
+## Testing
+
+Run the following command to send an HTTP `GET` request to the HTTP APIs endpoint. Note, you must edit the `{MyHttpAPI}` placeholder with the URL of the deployed HTTP APIs endpoint. This is provided in the stack outputs.
+
+```bash
+$ curl --location --request POST '{MyHttpAPI}/{Mode}'
+```
+
+- {MyHttpAPI} - URL of the deployed HTTP APIs endpoint. This is provided in the stack outputs.
+- {Mode} - Either `mode-a`, `mode-b`, or `mode-c`. Each mode corresponds to a different Lambda function.
+
+Then proceed on the CloudWatch logs GUI and check either `service-a`, `service-b`, and `service-c` logs. It should contains the following log which means that the lambda router was able to route the request to the correct service.
+
+For `mode-a`:
+
+```
+Received event:
+{
+    "mode": "mode-a"
+}
+Mode: mode-a
+```
+
 ## Cleanup
 
 ```sh
