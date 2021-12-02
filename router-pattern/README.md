@@ -49,7 +49,7 @@ $ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
 Run the following command to send an HTTP `GET` request to the HTTP APIs endpoint. Note, you must edit the `{MyHttpAPI}` placeholder with the URL of the deployed HTTP APIs endpoint. This is provided in the stack outputs.
 
 ```bash
-$ curl --location --request POST '{MyHttpAPI}/{Mode}'
+$ curl --location --request GET '{MyHttpAPI}/{Mode}'
 ```
 
 - {MyHttpAPI} - URL of the deployed HTTP APIs endpoint. This is provided in the stack outputs.
