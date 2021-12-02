@@ -22,9 +22,11 @@ The Router pattern allows you to connect the client request (or events) to one o
 
 In the architecture, there is a one Lambda function listening for request. Once the request is received, the lambda function will simply determine which task type should be used to process the request.
 
-Note that each lambda function has its own dead-letter-queue to forward the request when there is a failure.
+The requests types are asynchronous, that is why each lambda function has its own dead-letter-queue to forward the request when there is a failure -- this is to allow the developers to check the messages for investigation.
 
-In this example, the lambda function is simply interacting with the DynamoDb.
+In this example, the lambda function is simply interacting with the DynamoDb, a complex business logic will also be possible.
+
+Another example, the diagram below is similar with the original architecture. However, the lambda router function is triggered by an S3 PUT event.
 
 ## Deployment
 
