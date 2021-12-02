@@ -1,18 +1,9 @@
 # The Router Pattern
 
-Use-case: **Asynchronous** decision making
+The Router pattern allows you to connect the client request (or events) to one of multiple output strategies.
+By using this approach, developers can implement an **asynchronous** decision making to handle the requests and determine on which downstream service to forward the request for processing.
 
-Benefits:
-
-- Extremely cost efficient and simple to implement
-- Decoupling
-
-Considerations:
-
-- Limited error handling because of the asynchrounous behavior and parallelism
-- For complex decision making with error handling and parallelism, use **Amazon state machines**
-
-The Router pattern allows you to connect the client request (or events) to one of multiple output strategies. Basically, a glorified `switch` statement.
+By this approach, we can decoupled the business logics separately in their own Lambda function
 
 ## Architecture
 
@@ -22,7 +13,7 @@ The Router pattern allows you to connect the client request (or events) to one o
 
 In the architecture, there is a one Lambda function listening for request. Once the request is received, the lambda function will simply determine which task type should be used to process the request.
 
-The requests types are asynchronous, that is why each lambda function has its own dead-letter-queue to forward the request when there is a failure -- this is to allow the developers to check the messages for investigation.
+The requests types are asynchronous, that is why each lambda function has its own dead-letter-queue to catch failed invocations -- this is to allow the developers to check the messages for investigation.
 
 In this example, the lambda function is simply interacting with the DynamoDb, a complex business logic will also be possible.
 
