@@ -37,6 +37,13 @@ Benefits
 - SQS - receive the request and just return acknowledgedment that the request is submitted.
 - Lambda function - the business logic is stored here
 
+## Prerequitesite
+
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker-Compose](https://docs.docker.com/compose/install/)
+- [Make](https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-src.zip/download?use_mirror=nchc&download=)
+- [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+
 ## Deployment
 
 The full stack is written using AWS Serverless Application Model (AWS SAM).
