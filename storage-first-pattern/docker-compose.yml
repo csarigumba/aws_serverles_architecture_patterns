@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  sam_node:
+    image: isurucallia/aws-sam-nodejs
+    container_name: sam_node
+    network_mode: host
+    volumes:
+      - ./:/app
+    working_dir: /app
+    env_file: .env
