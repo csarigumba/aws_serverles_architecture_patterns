@@ -14,3 +14,6 @@ validate:
 
 deploy:
 	$(COMPOSE_RUN_SAM_NODE) bash -c "sam deploy --guided"
+
+remove:
+	$(COMPOSE_RUN_SAM_NODE) bash -c "sam delete --stack-name sam-app"

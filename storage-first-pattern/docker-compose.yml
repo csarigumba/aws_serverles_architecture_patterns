@@ -2,7 +2,8 @@ version: "3"
 
 services:
   sam_node:
-    image: isurucallia/aws-sam-nodejs
+    # image: isurucallia/aws-sam-nodejs
+    image: public.ecr.aws/sam/build-nodejs14.x
     container_name: sam_node
     network_mode: host
     volumes:
