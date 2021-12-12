@@ -69,7 +69,7 @@ The full stack is written using AWS Serverless Application Model (AWS SAM).
 Deploy by running the command:
 
 ```sh
-$ sam deploy --guided --profile {AWS_PROFILE} --region {AWS_REGION}
+$ make deploy
 ```
 
 This will create a file called `samconfig.toml` containing the configuration of this stack.
