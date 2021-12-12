@@ -44,6 +44,18 @@ Benefits
 - [Make](https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-src.zip/download?use_mirror=nchc&download=)
 - [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 
+Create `.env` for environment variables and pull docker image
+
+```sh
+$ make .env deps
+```
+
+Pull dependencies
+
+```sh
+$ make install
+```
+
 ## Deployment
 
 The full stack is written using AWS Serverless Application Model (AWS SAM).
