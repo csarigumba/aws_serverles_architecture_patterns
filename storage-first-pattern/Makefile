@@ -9,5 +9,8 @@ deps:
 install:
 	$(COMPOSE_RUN_SAM_NODE) npm install
 
+validate:
+	$(COMPOSE_RUN_SAM_NODE) bash -c "sam validate"
+
 deploy:
 	$(COMPOSE_RUN_SAM_NODE) bash -c "sam deploy --guided"
