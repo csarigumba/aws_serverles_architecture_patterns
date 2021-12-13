@@ -61,7 +61,7 @@ $ serverless offline start
 For manual deployment, run the following command.
 
 ```sh
-$ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
+$ make deploy
 ```
 
 ## Cleanup

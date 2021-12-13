@@ -1,4 +1,4 @@
-COMPOSE_RUN_SAM_NODE = docker-compose run --rm sam_node
+COMPOSE_RUN_SAM_NODE = docker-compose run --rm serverless_node
 
 .env:
 	cp .env.example .env
@@ -9,11 +9,12 @@ deps:
 install:
 	$(COMPOSE_RUN_SAM_NODE) npm install
 
-validate:
-	$(COMPOSE_RUN_SAM_NODE) bash -c "sam validate"
+install-plugin:
+	$(COMPOSE_RUN_SAM_NODE) serverless plugin install --name serverless-dynamodb-local
+	$(COMPOSE_RUN_SAM_NODE) serverless plugin install --name serverless-offline
 
 deploy:
-	$(COMPOSE_RUN_SAM_NODE) bash -c "sam deploy --guided"
+	$(COMPOSE_RUN_SAM_NODE) serverless deploy --verbose
 
 remove:
 	$(COMPOSE_RUN_SAM_NODE) bash -c "sam delete --stack-name sam-app"
