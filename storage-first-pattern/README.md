@@ -121,7 +121,5 @@ $ make remove
 Verification
 
 ```sh
-$ aws cloudformation list-stacks --query "StackSummaries[?contains(StackName,'sam-app')].StackStatus" \
---profile {AWS_PROFILE} \
---region {AWS_REGION}
+$ make confirm-deletion
 ```
