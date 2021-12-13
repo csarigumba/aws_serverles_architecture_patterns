@@ -58,7 +58,7 @@ $ serverless offline start
 - Note: The Github workflow will not work since the workflow file is located in the sub-directory.
 - TODO: Test the Github workflow by moving the workflow file in the root directory
 
-For manual deployment, run the following command.
+Run the following command:
 
 ```sh
 $ make deploy
