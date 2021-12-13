@@ -17,7 +17,7 @@ deploy:
 	$(COMPOSE_RUN_SAM_NODE) serverless deploy --verbose
 
 remove:
-	$(COMPOSE_RUN_SAM_NODE) bash -c "sam delete --stack-name sam-app"
+	$(COMPOSE_RUN_SAM_NODE) serverless remove --verbose
 
 confirm-deletion:
 	$(COMPOSE_RUN_SAM_NODE) bash -c "aws cloudformation list-stacks --query \"StackSummaries[?contains(StackName,'sam-app')].StackStatus\""

@@ -67,5 +67,5 @@ $ make deploy
 ## Cleanup
 
 ```sh
-$ serverless remove --aws-profile {PROFILE} -r {AWS_REGION} -v
+$ make remove
 ```
