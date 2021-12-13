@@ -115,7 +115,7 @@ Then open MyLambdaFunction logs on Cloudwatch to notice a log that resembles to 
 Deletion
 
 ```sh
-$ sam delete --stack-name {STACK_NAME} --profile {AWS_PROFILE} --region {AWS_REGION}
+$ make remove
 ```
 
 Verification
