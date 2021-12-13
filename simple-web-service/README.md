@@ -64,7 +64,7 @@ For manual deployment, run the following command.
 $ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
 ```
 
-## Removing
+## Cleanup
 
 ```sh
 $ serverless remove --aws-profile {PROFILE} -r {AWS_REGION} -v
