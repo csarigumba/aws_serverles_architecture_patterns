@@ -27,6 +27,32 @@ If a file is dropped into the S3 bucket, the lambda router will simply identify 
 
 By using the Router pattern approach, we can decouple each unique logics on each Lambda and focus on building the logic separately (separation of concerns).
 
+## Prerequitesite
+
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker-Compose](https://docs.docker.com/compose/install/)
+- [Make](https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-src.zip/download?use_mirror=nchc&download=)
+
+Create `.env` for environment variables and pull the docker image.
+
+```sh
+$ make .env deps
+```
+
+Provide your AWS credentials in the `.env` file.
+
+```text
+AWS_ACCESS_KEY_ID={AWS_ACCESS_KEY_ID}
+AWS_SECRET_ACCESS_KEY={AWS_SECRET_ACCESS_KEY}
+AWS_DEFAULT_REGION={AWS_DEFAULT_REGION}
+```
+
+Pull dependencies
+
+```sh
+$ make install
+```
+
 ## Deployment
 
 Run the following command.

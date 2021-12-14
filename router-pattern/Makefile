@@ -9,9 +9,6 @@ deps:
 install:
 	$(COMPOSE_RUN_SAM_NODE) npm install
 
-startLocalApi:
-	serverless offline start
-
 deploy:
 	$(COMPOSE_RUN_SAM_NODE) serverless deploy --verbose
 
