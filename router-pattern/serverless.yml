@@ -17,7 +17,6 @@ custom:
 plugins:
   - serverless-iam-roles-per-function
   - serverless-plugin-lambda-dead-letter
-
 functions:
   router:
     handler: ./src/api/router.handler

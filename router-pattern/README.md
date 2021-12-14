@@ -50,7 +50,7 @@ AWS_DEFAULT_REGION={AWS_DEFAULT_REGION}
 Pull dependencies
 
 ```sh
-$ make install
+$ make install install-plugin
 ```
 
 ## Deployment
@@ -58,7 +58,7 @@ $ make install
 Run the following command.
 
 ```sh
-$ serverless deploy --aws-profile {PROFILE} -r {AWS_REGION}
+$ make deploy
 ```
 
 ## Testing
@@ -87,5 +87,5 @@ Mode: mode-a
 ## Cleanup
 
 ```sh
-$ serverless remove --aws-profile {PROFILE} -r {AWS_REGION} -v
+$ make remove
 ```
