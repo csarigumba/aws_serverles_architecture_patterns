@@ -13,6 +13,9 @@ install-plugin:
 	$(COMPOSE_RUN_SAM_NODE) serverless plugin install --name serverless-dynamodb-local
 	$(COMPOSE_RUN_SAM_NODE) serverless plugin install --name serverless-offline
 
+startLocalApi:
+	serverless offline start
+
 deploy:
 	$(COMPOSE_RUN_SAM_NODE) serverless deploy --verbose
 

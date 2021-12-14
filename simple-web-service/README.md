@@ -38,19 +38,13 @@ The whole infrastructure is written using Serverless Framework. This is to allow
 **Optional:** Install the following dependency for local testing.
 
 ```sh
-$ npm i -g serverless serverless-dynamodb-local serverless-offline
-```
-
-Install DynamoDb local
-
-```sh
-$ serverless dynamodb install
+$ make install install-plugin
 ```
 
 Start local API
 
 ```sh
-$ serverless offline start
+$ make startLocalApi
 ```
 
 ## Deployment
