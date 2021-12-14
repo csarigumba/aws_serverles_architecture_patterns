@@ -29,6 +29,32 @@ The application is consist of 5 basic APIs for demo purposes:
   - Compared to version 2, version 3 allow us to install what we need (by module and not the whole AWS SDK)
 - Github pipeline for CI/CD
 
+## Prerequitesite
+
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker-Compose](https://docs.docker.com/compose/install/)
+- [Make](https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81-src.zip/download?use_mirror=nchc&download=)
+
+Create `.env` for environment variables and pull the docker image.
+
+```sh
+$ make .env deps
+```
+
+Provide your AWS credentials in the `.env` file.
+
+```text
+AWS_ACCESS_KEY_ID={AWS_ACCESS_KEY_ID}
+AWS_SECRET_ACCESS_KEY={AWS_SECRET_ACCESS_KEY}
+AWS_DEFAULT_REGION={AWS_DEFAULT_REGION}
+```
+
+Pull dependencies
+
+```sh
+$ make install
+```
+
 ## Running
 
 The whole infrastructure is written using Serverless Framework. This is to allow seamless development in local and deployment to AWS environment.
